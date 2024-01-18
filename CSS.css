@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    border: 50px solid;
+    border-image: linear-gradient(to right, #db6334, #150101); /* Linear gradient dari kiri ke kanan */
+    border-image-slice: 1; /* Pisahkan warna batas dari area konten */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fdf7f7f5;
+}
+h4 {
+    font-style: italic; /* teks menjadi miring */
+}
+h1, h4 {
+    margin-bottom: 1; /* Menghapus margin bawah default pada elemen h1 dan h4 */
+}
+
+h1 + h4 {
+    margin-top: 0 em; /* Menambahkan margin atas pada h4 setelah h1 */
+}
+
+.calculator-container {
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    perspective: 1000px;
+}
+.result-box {
+    width: 100px; /* Atur lebar persegi 3D */
+    height: 100px; /* Atur tinggi persegi 3D */
+    background-color: #3498db; /* Atur warna persegi 3D */
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 1s ease-in-out;
+    padding: 15px;
+    position: absolute;
+   
+}
+.result-box {
+    /* ... (kode lainnya) */
+    position: relative;
+}
+
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: rgb(18, 1, 1);
+}
+
+.result-text {
+    margin: 10px 0;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+#result-container.show {
+    animation: fadeIn 2s forwards;
+    
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
